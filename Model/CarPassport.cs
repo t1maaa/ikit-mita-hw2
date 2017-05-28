@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Program
+    public class CarPassport
     {
-        static void Main(string[] args)
+        public Driver Owner { get; set; }
+        public Car Car { get; }
+
+       public CarPassport(Car car)
         {
+            this.Car = car;
         }
     }
 }
