@@ -13,31 +13,29 @@ namespace Model
         public DateTime LicenceDate { get; }
         public string Name { get; }
 
-        private int _experience = 0;
-        public int Experience//
+        public int Experience
         {
             get
             {
                 if (DateTime.Today.Month < LicenceDate.Month)
                 {
-                    _experience = DateTime.Today.Year - LicenceDate.Year - 1;
+                    return DateTime.Today.Year - LicenceDate.Year - 1;
                 }
                 else if (DateTime.Today.Month > LicenceDate.Month)
                 {
-                    _experience = DateTime.Today.Year - LicenceDate.Year;
+                    return DateTime.Today.Year - LicenceDate.Year;
                 }
                 else
                 {
                     if (DateTime.Today.Day < LicenceDate.Day)
                     {
-                        _experience = DateTime.Today.Year - LicenceDate.Year - 1;
+                        return DateTime.Today.Year - LicenceDate.Year - 1;
                     }
                     else
                     {
-                        _experience = DateTime.Today.Year - LicenceDate.Year;
+                        return DateTime.Today.Year - LicenceDate.Year;
                     }
                 }
-                return _experience;
             }
         }
 
